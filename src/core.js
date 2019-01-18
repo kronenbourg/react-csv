@@ -43,7 +43,7 @@ export const getHeaderValue = (property, obj) => {
         return o[p];
       }
     }, obj);
-  
+
   return (foundValue === undefined) ? '' : foundValue;
 }
 
@@ -80,7 +80,7 @@ export const buildURI = ((data, uFEFF, headers, separator) => {
   const type = isSafari() ? 'application/csv' : 'text/csv';
   const blob = new Blob([uFEFF ? '\uFEFF' : '', csv], {type});
   const dataURI = `data:${type};charset=utf-8,${uFEFF ? '\uFEFF' : ''}${csv}`;
-
+console.log('test');
   const URL = window.URL || window.webkitURL;
 
   return (typeof URL.createObjectURL === 'undefined')
